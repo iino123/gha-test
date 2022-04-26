@@ -3,7 +3,7 @@ name: "Create OR Update Staging Pull Request"
 # TODO: トリガはスケジュールかworkflow_dispatchを使うかを検討
 on:
   push:
-    branches: [main] # for test
+    branches: [develop] # for test
 
 env:
   BASE_BRANCH: "staging"
