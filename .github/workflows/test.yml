@@ -11,7 +11,7 @@ env:
   REVIEWERS: "iino123"
 
 jobs:
-  create-or-update-staging-pr:
+  test-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,4 +29,4 @@ jobs:
           # 後続の処理で差分コミットを取得したいブランチにチェックアウトする
           git checkout ${{ env.BASE_BRANCH }}
           git checkout ${{ env.HEAD_BRANCH }}
-          echo "test workflow"
+          echo "test workflow2"
