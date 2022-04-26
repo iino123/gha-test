@@ -2,9 +2,9 @@ name: "Test WorkFlow!!"
 
 # TODO: トリガはスケジュールかworkflow_dispatchを使うかを検討
 on:
+  workflow_dispatch:
   push:
     branches: [develop] # for test
-on: workflow_dispatch
 
 env:
   BASE_BRANCH: "staging"
