@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
   push:
     branches: [develop] # for test
+  schedule:
+    - cron: "0 17 * * mon test $(expr $(date '+\%W') \% 2 ) -eq 0"
 
 env:
   BASE_BRANCH: "staging"
