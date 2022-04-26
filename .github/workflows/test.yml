@@ -7,7 +7,7 @@ on:
 
 env:
   BASE_BRANCH: "staging"
-  HEAD_BRANCH: "devlop"
+  HEAD_BRANCH: "develop"
   REVIEWERS: "iino123"
 
 jobs:
