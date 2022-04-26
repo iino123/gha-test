@@ -1,0 +1,32 @@
+name: "Create OR Update Staging Pull Request"
+
+# TODO: トリガはスケジュールかworkflow_dispatchを使うかを検討
+on:
+  push:
+    branches: [main] # for test
+
+env:
+  BASE_BRANCH: "staging"
+  HEAD_BRANCH: "devlop"
+  REVIEWERS: "iino123"
+
+jobs:
+  create-or-update-staging-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set today as env variable
+        env:
+          TZ: "Asia/Tokyo"
+        run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: echo
+        run: |
+          # 後続の処理で差分コミットを取得したいブランチにチェックアウトする
+          git checkout ${{ env.BASE_BRANCH }}
+          git checkout ${{ env.HEAD_BRANCH }}
+          echo "test workflow"
